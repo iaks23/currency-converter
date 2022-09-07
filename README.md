@@ -18,9 +18,9 @@ A currency converter to calculate rates from historical dates using the [Frankfu
 
 ### The Application
 
-The currency converter python programs takes in input arguements of a partivular date and two currency codes from the user, and provides the conversion rate as well as the inverse rate for the specified date. 
+The currency converter python programs takes in input arguements of a particular date and two currency codes from the user, and provides the conversion rate as well as the inverse rate for the specified date. 
 
-### Challenged faced
+### Challenges Faced
 
 > Working with JSON response objects 
 
@@ -106,5 +106,6 @@ python main.py <YYYY-MM-DD> <ORIGIN CURRENCY CODE> <DESTINATION CURRENCY CODE>
 
 
 ## 📎 Citations
-
+1) https://www.frankfurter.app
+2) https://github.com/hakanensari/frankfurter
 
