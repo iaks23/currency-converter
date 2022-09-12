@@ -83,6 +83,8 @@ python main.py <YYYY-MM-DD> <ORIGIN CURRENCY CODE> <DESTINATION CURRENCY CODE>
 
 ## 📂 Project Structure
 
+```
+
 .main/              <- Main branch
 │
 ├── README.md        <- Markdown file containing project details
@@ -99,7 +101,7 @@ python main.py <YYYY-MM-DD> <ORIGIN CURRENCY CODE> <DESTINATION CURRENCY CODE>
 │
 ├── test.py           <- Python unit tests
 
-
+```
 
 
 ## 📎 Citations
