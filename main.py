@@ -21,15 +21,11 @@ if __name__ == "__main__":
     
     input_arg = sys.argv[1:]
     
-    arg_resp = check_arguments(input_arg)
-    if(arg_resp != input_arg):
-        print("[ERROR] You need to provide 3 arguments in the following order: <date> <currency1> <currency2>")
-        exit(0)
+    check_arguments(input_arg)
+   
     
-    date_resp = check_date(input_arg[0])
-    if not date_resp:
-        print("Provided date is invalid")
-        exit(0)
+    check_date(input_arg[0])
+    
 
     from_currency = str(input_arg[1])
     to_currency = str(input_arg[2])
@@ -37,9 +33,9 @@ if __name__ == "__main__":
 
     curr1 = CurrencyConverter(from_currency,to_currency, date)
 
-    currencyr_resp = curr1.check_currencies()
+    curr1.check_currencies()
 
-    final_val = curr1.get_historical_rate()
+    curr1.get_historical_rate()
 
     
 

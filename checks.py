@@ -32,8 +32,8 @@ def check_arguments(args):
     if len(args) == 3:
         return args
     else:
-        message = "error"
-        return message
+        
+        raise SystemExit('[ERROR] You need to provide 3 arguments in the following order: <date> <currency1> <currency2>')
     
 
 def check_date(date):
@@ -72,7 +72,8 @@ def check_date(date):
         newDate = datetime.date(year,month,day)
         return True
     except Exception:
-        return False
+        
+        raise SystemExit("Provided date is invalid")
 
 
 

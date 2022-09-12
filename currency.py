@@ -33,7 +33,7 @@ class CurrencyConverter:
 
         self.rate: float = 0
 
-        self.inverse_rate: float = 0
+        self.inverse_rate: float = 0.00
 
         self.date: str = date
 
@@ -86,12 +86,15 @@ class CurrencyConverter:
         to_validity = self.api.check_currency(self.to_currency)
 
         if not(from_validity) and not(to_validity):
-            print(self.from_currency,"and",self.to_currency,"are not valid currency codes")
+            message = self.from_currency+" and "+self.to_currency+" are not valid currency codes"
+            raise SystemExit(message)
 
         elif not from_validity:
-            print(self.from_currency, "is not a valid currency code")   
+            message = self.from_currency + " is not a valid currency code"
+            raise SystemExit(message)   
         elif not to_validity:
-            print(self.to_currency,"is not a valid currency code")   
+            message = self.to_currency + " is not a valid currency code"
+            raise SystemExit(message)   
         else:
             return True
 
@@ -179,15 +182,16 @@ class CurrencyConverter:
         -------
         
         """
-        api_resp = self.api.get_historical_rate(self.from_currency, self.to_currency, self.date, self.amount)
+        api_resp = (self.api.get_historical_rate(self.from_currency, self.to_currency, self.date, self.amount))
         
         rate_list = list(api_resp['rates'].values())
         self.rate = rate_list[0]
         self.rate = self.round_rate(self.rate)
 
         self.inverse_rate = self.reverse_rate()
+        message = 'The conversion rate on '+self.date+' from '+self.from_currency+' to '+self.to_currency+' was '+str(self.rate)+'. '+'The inverse rate was '+str(self.inverse_rate)+'.'
 
-        print("The conversion rate on",self.date,"from",self.from_currency,"to",self.to_currency,"was",self.rate,".","The inverse rate was",self.inverse_rate,".")
+        raise SystemExit(message)
 
 
 

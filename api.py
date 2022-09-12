@@ -30,11 +30,11 @@ def call_get(url: str) -> requests.models.Response:
 
     Returns
     -------
-    requests.models.Response object in JSON format
+    requests.models.Response object 
     API error message: There is an error with Frankfurter API
     """
     response = requests.get(url)
     if response.status_code == 200:
-        return response.json()
+        return response
     else:
-        return "There is an error with Frankfurter API"    
+        raise SystemExit("There is an error with Frankfurter API")  

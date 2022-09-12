@@ -41,8 +41,9 @@ class Frankfurter:
         -------
         List of valid currency codes
         """
-        data = call_get(self.currencies_url)
+        data = (call_get(self.currencies_url).json())
         self.currencies = list(data.keys())
+        #print(self.currencies)
         return self.currencies
         
         # => To be filled by student
@@ -101,9 +102,9 @@ class Frankfurter:
 
         Returns
         -------
-        requests.models.Response object in JSON format
+        requests.models.Response object
         """
-        
         endpoint = self.historical_url + from_date + "?from=" + from_currency +  "&to=" + to_currency
-        data = call_get(endpoint)
+        
+        data = (call_get(endpoint).json())
         return data
