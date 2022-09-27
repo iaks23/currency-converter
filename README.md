@@ -10,7 +10,7 @@ A currency converter to calculate rates from historical dates using the [Frankfu
 [![view-repo](https://img.shields.io/badge/View-Repo-blueviolet)](https://github.com/iaks23?tab=repositories)
 [![view-profile](https://img.shields.io/badge/Go%20To-Profile-orange)](https://github.com/iaks23) 
 
-+## 🪪 Author
+## 🪪 Author
 ##### Name: Akshaya Parthasarathy
 ##### Student ID: 14081133
 
